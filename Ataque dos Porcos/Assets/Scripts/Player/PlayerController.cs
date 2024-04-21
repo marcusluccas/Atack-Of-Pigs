@@ -7,12 +7,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D myRB;
     private float velocity = 5;
     private Animator myAnimator;
+    private int maxJumps = 1;
+    private int amountJumps;
 
     // Start is called before the first frame update
     void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        amountJumps = maxJumps;
     }
 
     // Update is called once per frame
@@ -29,7 +32,19 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            myRB.velocity = Vector2.up * velocity;
+            if (amountJumps > 0)
+            {
+                myRB.velocity = Vector2.up * velocity;
+                amountJumps--;
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Block"))
+        {
+            amountJumps = maxJumps;
         }
     }
 }
