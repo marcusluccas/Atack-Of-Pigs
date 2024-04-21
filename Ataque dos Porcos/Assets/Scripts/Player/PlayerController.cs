@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D myRB;
-    private float velocity = 4;
+    private float velocity = 5;
     private Animator myAnimator;
 
     // Start is called before the first frame update
@@ -26,5 +26,10 @@ public class PlayerController : MonoBehaviour
             myAnimator.SetBool("Move", true);
         }
         myRB.velocity = new Vector2(horizontal, myRB.velocity.y);
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            myRB.velocity = Vector2.up * velocity;
+        }
     }
 }
