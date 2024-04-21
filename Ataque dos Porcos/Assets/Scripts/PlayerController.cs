@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal") * velocidade;
+        if (horizontal != 0)
+        {
+            transform.localScale = new Vector3(Mathf.Sign(horizontal), 1f, 1f);
+        }
         meuRB.velocity = new Vector2(horizontal, meuRB.velocity.y);
     }
 }
