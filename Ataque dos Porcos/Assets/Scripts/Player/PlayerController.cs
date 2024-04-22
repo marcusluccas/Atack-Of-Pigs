@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private float velocity = 5;
     private Animator myAnimator;
     private int maxJumps = 1;
-    private int amountJumps;
+    private int amountJumps = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +35,15 @@ public class PlayerController : MonoBehaviour
             if (amountJumps > 0)
             {
                 myRB.velocity = Vector2.up * velocity;
+                myAnimator.SetBool("InFloor", false);
                 amountJumps--;
             }
+        }
+
+        myAnimator.SetFloat("Vspeed", 0f);
+        if (myRB.velocity.y != 0f)
+        {
+            myAnimator.SetFloat("Vspeed", Mathf.Sign(myRB.velocity.y));
         }
     }
 
@@ -44,6 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block"))
         {
+            myAnimator.SetBool("InFloor", true);
             amountJumps = maxJumps;
         }
     }
