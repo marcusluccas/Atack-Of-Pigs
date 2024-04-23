@@ -42,3 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 561183881
+    locked: 0
+  - name: Decoracao
+    uniqueID: 692285915
+    locked: 0
+  - name: Level
+    uniqueID: 4239467527
+    locked: 0
+  - name: Inimigos
+    uniqueID: 3816037517
+    locked: 0
+  - name: Player
+    uniqueID: 3345976093
+    locked: 0
