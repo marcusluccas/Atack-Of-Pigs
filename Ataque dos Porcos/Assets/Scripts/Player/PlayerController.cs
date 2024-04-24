@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private int amountJumps = 0;
     private BoxCollider2D myBoxCol;
     [SerializeField] private LayerMask myLayer;
+    private bool inFloor = false;
 
     // Start is called before the first frame update
     void Start()
@@ -55,14 +56,11 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && amountJumps > 0 && InGrounded())
         {
-            if (amountJumps > 0)
-            {
-                myRB.velocity = Vector2.up * velocity;
-                //myAnimator.SetBool("InFloor", false);
-                amountJumps--;
-            }
+            myRB.velocity = Vector2.up * velocity;
+            //myAnimator.SetBool("InFloor", false);
+            amountJumps--;
         }
 
         myAnimator.SetFloat("Vspeed", 0f);
