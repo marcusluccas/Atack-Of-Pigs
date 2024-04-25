@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     private int amountJumps = 0;
     private BoxCollider2D myBoxCol;
     [SerializeField] private LayerMask myLayer;
-    private bool inFloor = false;
+    private int life = 3;
+    private float waitHit = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Jump();
+        Invencibilidade();
     }
 
     private void FixedUpdate()
@@ -68,6 +70,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Invencibilidade()
+    {
+        waitHit -= Time.deltaTime;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemys"))
@@ -79,7 +86,11 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-
+                if (waitHit <= 0f)
+                {
+                    life--;
+                    waitHit = 1f;
+                }
             }
         }
     }

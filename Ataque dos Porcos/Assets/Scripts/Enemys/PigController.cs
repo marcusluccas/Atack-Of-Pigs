@@ -44,7 +44,7 @@ public class PigController : MonoBehaviour
         if (waitMove <= 0f)
         {
             myRB.velocity = new Vector2(myVelocity * direction, 0f);
-            waitMove = Random.Range(2, 3);
+            waitMove = Random.Range(5, 8);
             direction = Random.Range(-1, 2);
         }
 
