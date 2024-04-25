@@ -68,12 +68,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Block"))
+        if (collision.CompareTag("Enemys"))
         {
-            //myAnimator.SetBool("InFloor", true);
-            //amountJumps = maxJumps;
+            if (transform.position.y > collision.transform.position.y)
+            {
+                myRB.velocity = Vector2.up * velocity;
+                myAnimator.SetFloat("Vspeed", Mathf.Sign(myRB.velocity.y));
+            }
+            else
+            {
+
+            }
         }
     }
 
