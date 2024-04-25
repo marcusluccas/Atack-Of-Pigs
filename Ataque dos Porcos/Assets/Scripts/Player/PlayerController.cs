@@ -34,8 +34,6 @@ public class PlayerController : MonoBehaviour
     {
         myAnimator.SetBool("InFloor", InGrounded());
 
-        Debug.Log(InGrounded());
-
         if (InGrounded())
         {
             amountJumps = maxJumps;
