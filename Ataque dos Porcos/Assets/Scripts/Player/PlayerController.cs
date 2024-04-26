@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
                     if (life < 0)
                     {
                         dead = true;
+                        myRB.velocity = Vector2.zero;
                     }
                     waitHit = 1f;
                 }
