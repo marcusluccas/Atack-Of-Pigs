@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         amountJumps = maxJumps;
         myBoxCol = GetComponent<BoxCollider2D>();
+        myAnimator.SetInteger("Life", life);
     }
 
     // Update is called once per frame
@@ -90,6 +91,8 @@ public class PlayerController : MonoBehaviour
                 if (waitHit <= 0f)
                 {
                     life--;
+                    myAnimator.SetTrigger("Hit");
+                    myAnimator.SetInteger("Life", life);
                     waitHit = 1f;
                 }
             }
