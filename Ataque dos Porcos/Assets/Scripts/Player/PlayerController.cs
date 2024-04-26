@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
             if (transform.position.y > collision.transform.position.y)
             {
                 myRB.velocity = Vector2.up * velocity;
+                collision.GetComponentInParent<Animator>().SetTrigger("Hit");
                 myAnimator.SetFloat("Vspeed", Mathf.Sign(myRB.velocity.y));
             }
             else

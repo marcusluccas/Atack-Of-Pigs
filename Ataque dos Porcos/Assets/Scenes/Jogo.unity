@@ -3796,6 +3796,7 @@ MonoBehaviour:
   myLayerCol:
     serializedVersion: 2
     m_Bits: 256
+  myCollider: {fileID: 1343909497}
 --- !u!95 &305622320
 Animator:
   serializedVersion: 5
