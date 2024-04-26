@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (waitHit <= 0f)
+                if (waitHit <= 0f && !dead)
                 {
                     life--;
                     myAnimator.SetTrigger("Hit");
