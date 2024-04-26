@@ -29,9 +29,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-        Jump();
-        Invencibilidade();
+        if (!dead)
+        {
+            Move();
+            Jump();
+            Invencibilidade();
+        }
     }
 
     private void FixedUpdate()
@@ -46,17 +49,14 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if (!dead)
+        float horizontal = Input.GetAxisRaw("Horizontal") * velocity;
+        myAnimator.SetBool("Move", false);
+        if (horizontal != 0)
         {
-            float horizontal = Input.GetAxisRaw("Horizontal") * velocity;
-            myAnimator.SetBool("Move", false);
-            if (horizontal != 0)
-            {
-                transform.localScale = new Vector3(Mathf.Sign(horizontal), 1f, 1f);
-                myAnimator.SetBool("Move", true);
-            }
-            myRB.velocity = new Vector2(horizontal, myRB.velocity.y);
+            transform.localScale = new Vector3(Mathf.Sign(horizontal), 1f, 1f);
+            myAnimator.SetBool("Move", true);
         }
+        myRB.velocity = new Vector2(horizontal, myRB.velocity.y);
     }
 
     private void Jump()
