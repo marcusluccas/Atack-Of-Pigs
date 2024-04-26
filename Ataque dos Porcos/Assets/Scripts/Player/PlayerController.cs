@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask myLayer;
     private int life = 3;
     private float waitHit = 0;
+    private bool dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,14 +46,17 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal") * velocity;
-        myAnimator.SetBool("Move", false);
-        if (horizontal != 0)
+        if (!dead)
         {
-            transform.localScale = new Vector3(Mathf.Sign(horizontal), 1f, 1f);
-            myAnimator.SetBool("Move", true);
+            float horizontal = Input.GetAxisRaw("Horizontal") * velocity;
+            myAnimator.SetBool("Move", false);
+            if (horizontal != 0)
+            {
+                transform.localScale = new Vector3(Mathf.Sign(horizontal), 1f, 1f);
+                myAnimator.SetBool("Move", true);
+            }
+            myRB.velocity = new Vector2(horizontal, myRB.velocity.y);
         }
-        myRB.velocity = new Vector2(horizontal, myRB.velocity.y);
     }
 
     private void Jump()
@@ -93,6 +97,10 @@ public class PlayerController : MonoBehaviour
                     life--;
                     myAnimator.SetTrigger("Hit");
                     myAnimator.SetInteger("Life", life);
+                    if (life < 0)
+                    {
+                        dead = true;
+                    }
                     waitHit = 1f;
                 }
             }
