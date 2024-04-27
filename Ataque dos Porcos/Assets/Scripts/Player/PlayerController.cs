@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private int life = 3;
     private float waitHit = 0;
     private bool dead = false;
+    private DoorController door = null;
+    private bool openDoor = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dead)
+        if (!dead && !openDoor)
         {
             Move();
             Jump();
             Invencibilidade();
+            OpenDoor();
         }
     }
 
@@ -80,9 +82,34 @@ public class PlayerController : MonoBehaviour
         waitHit -= Time.deltaTime;
     }
 
+    private void OpenDoor()
+    {
+        if (door != null)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                door.Open();
+                Invoke("AnimationOpenDoor", 0.5f);
+                openDoor = true;
+                myRB.velocity = Vector2.zero;
+                myAnimator.SetBool("Move", false);
+            }
+        }
+    }
+
+    private void AnimationOpenDoor()
+    {
+        myAnimator.SetTrigger("OpenDoor");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemys"))
+        if (collision.gameObject.CompareTag("Doors"))
+        {
+            door = collision.GetComponent<DoorController>();
+        }
+
+        if (collision.gameObject.CompareTag("Enemys"))
         {
             if (transform.position.y > collision.transform.position.y)
             {
@@ -92,7 +119,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (waitHit <= 0f && !dead)
+                if (waitHit <= 0f && !dead && !openDoor)
                 {
                     life--;
                     myAnimator.SetTrigger("Hit");
@@ -105,6 +132,15 @@ public class PlayerController : MonoBehaviour
                     waitHit = 1f;
                 }
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Doors"))
+        {
+            Debug.Log("oi");
+            door = null;
         }
     }
 

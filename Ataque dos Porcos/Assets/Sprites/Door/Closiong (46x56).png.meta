@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 70ee27c1902e3724a8623976760c3f5d
+guid: 28268049145d3d940ad46d88d375c2e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dead (78x58)_0
+      name: Closiong (46x56)_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 14
-        width: 37
-        height: 26
+        x: 0
+        y: 0
+        width: 46
+        height: 56
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,71 +137,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db372100ad918ad43b842f6b40ef12b4
-      internalID: 704601536
+      spriteID: 42428430cb7b0104dbb05cfeaca4de3d
+      internalID: 1056187195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead (78x58)_1
+      name: Closiong (46x56)_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 9
-        width: 38
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 46
+        y: 0
+        width: 46
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dd1a6ea48a3eae43b455778365bf901
-      internalID: 392502199
+      spriteID: 8ed426e113b860f4aab4acdd722c8a45
+      internalID: 1852538340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead (78x58)_2
+      name: Closiong (46x56)_2
       rect:
         serializedVersion: 2
-        x: 157
-        y: 11
-        width: 38
-        height: 21
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 92
+        y: 0
+        width: 46
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce9a6299bdaa0c5448072e4f67205357
-      internalID: 550382853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dead (78x58)_3
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 9
-        width: 38
-        height: 22
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c81e2cdd72f13d4a990800d27c979be
-      internalID: -1777120298
+      spriteID: d5d21c0805324bd4497999738976b794
+      internalID: 1869491285
       vertices: []
       indices: 
       edges: []
@@ -217,10 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dead (78x58)_0: 704601536
-      Dead (78x58)_1: 392502199
-      Dead (78x58)_2: 550382853
-      Dead (78x58)_3: -1777120298
+      Closiong (46x56)_0: 1056187195
+      Closiong (46x56)_1: 1852538340
+      Closiong (46x56)_2: 1869491285
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

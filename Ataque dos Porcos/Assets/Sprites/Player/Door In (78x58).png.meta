@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 70ee27c1902e3724a8623976760c3f5d
+guid: daf2df2d9f79a634d9f8a4ee74d6b933
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dead (78x58)_0
+      name: Door In (78x58)_0
       rect:
         serializedVersion: 2
         x: 6
-        y: 14
+        y: 13
         width: 37
-        height: 26
+        height: 25
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,71 +137,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db372100ad918ad43b842f6b40ef12b4
-      internalID: 704601536
+      spriteID: 7ade1ce225f3d0044b1208d92840d6f4
+      internalID: 1083640879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead (78x58)_1
+      name: Door In (78x58)_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 9
-        width: 38
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 94
+        y: 16
+        width: 26
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dd1a6ea48a3eae43b455778365bf901
-      internalID: 392502199
+      spriteID: 7613cc136a6381e4b876316dacb9bf30
+      internalID: 660692480
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead (78x58)_2
+      name: Door In (78x58)_2
       rect:
         serializedVersion: 2
-        x: 157
-        y: 11
-        width: 38
-        height: 21
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 175
+        y: 14
+        width: 29
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce9a6299bdaa0c5448072e4f67205357
-      internalID: 550382853
+      spriteID: c2c2448d9c5b1ba43aa9f8c776a36211
+      internalID: -1865873587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead (78x58)_3
+      name: Door In (78x58)_3
       rect:
         serializedVersion: 2
-        x: 234
-        y: 9
-        width: 38
-        height: 22
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 253
+        y: 16
+        width: 29
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c81e2cdd72f13d4a990800d27c979be
-      internalID: -1777120298
+      spriteID: f0b3b439846ea4d4982df7f66bd3a806
+      internalID: 1902279544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door In (78x58)_4
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 14
+        width: 29
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65db8379b7abc4742811a656cceacbfe
+      internalID: 943940299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door In (78x58)_5
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 16
+        width: 29
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2544ec23501db41836bb3db5fd38da
+      internalID: 1452760029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door In (78x58)_6
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 14
+        width: 29
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f180c87d0f736f441a8f56fa7047f75a
+      internalID: 1745679465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door In (78x58)_7
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 16
+        width: 29
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceadb0cbd5a7e504db70013412a3b32e
+      internalID: -2057171983
       vertices: []
       indices: 
       edges: []
@@ -217,10 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dead (78x58)_0: 704601536
-      Dead (78x58)_1: 392502199
-      Dead (78x58)_2: 550382853
-      Dead (78x58)_3: -1777120298
+      Door In (78x58)_0: 1083640879
+      Door In (78x58)_1: 660692480
+      Door In (78x58)_2: -1865873587
+      Door In (78x58)_3: 1902279544
+      Door In (78x58)_4: 943940299
+      Door In (78x58)_5: 1452760029
+      Door In (78x58)_6: 1745679465
+      Door In (78x58)_7: -2057171983
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
