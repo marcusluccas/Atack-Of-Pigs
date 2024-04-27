@@ -21,4 +21,9 @@ public class DoorController : MonoBehaviour
     {
         myAnimator.SetTrigger("Open");
     }
+
+    private void NextScene(string Scene)
+    {
+        FindObjectOfType<GameManager>().ChooseScene(Scene);
+    }
 }
