@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemys"))
         {
-            if (transform.position.y > collision.transform.position.y)
+            if (transform.position.y > collision.gameObject.transform.position.y)
             {
                 myRB.velocity = Vector2.up * velocity;
                 collision.GetComponentInParent<Animator>().SetTrigger("Hit");

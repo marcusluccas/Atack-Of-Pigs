@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     private Animator myAnimator;
+    [SerializeField] private string Scene;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class DoorController : MonoBehaviour
         myAnimator.SetTrigger("Open");
     }
 
-    private void NextScene(string Scene)
+    private void NextScene()
     {
         FindObjectOfType<GameManager>().ChooseScene(Scene);
     }
