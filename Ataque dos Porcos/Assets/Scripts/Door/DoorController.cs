@@ -25,6 +25,9 @@ public class DoorController : MonoBehaviour
 
     private void NextScene()
     {
-        FindObjectOfType<GameManager>().ChooseScene(Scene);
+        if (Scene != null)
+        {
+            FindObjectOfType<GameManager>().ChooseScene(Scene);
+        }
     }
 }

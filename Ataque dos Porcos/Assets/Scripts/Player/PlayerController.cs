@@ -11,11 +11,12 @@ public class PlayerController : MonoBehaviour
     private int amountJumps = 0;
     private BoxCollider2D myBoxCol;
     [SerializeField] private LayerMask myLayer;
-    private int life = 3;
+    private int life;
     private float waitHit = 0;
     private bool dead = false;
     private DoorController door = null;
     private bool openDoor = false;
+    private GameManager theGM;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class PlayerController : MonoBehaviour
         amountJumps = maxJumps;
         myBoxCol = GetComponent<BoxCollider2D>();
         myAnimator.SetInteger("Life", life);
+        theGM = FindObjectOfType<GameManager>();
+        life = theGM.CurrentLife();
     }
 
     // Update is called once per frame
@@ -111,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemys"))
         {
-            if (transform.position.y > collision.gameObject.transform.position.y)
+            if (transform.position.y > collision.transform.position.y)
             {
                 myRB.velocity = Vector2.up * velocity;
                 collision.GetComponentInParent<Animator>().SetTrigger("Hit");
@@ -122,6 +125,7 @@ public class PlayerController : MonoBehaviour
                 if (waitHit <= 0f && !dead && !openDoor)
                 {
                     life--;
+                    theGM.SetLife(life);
                     myAnimator.SetTrigger("Hit");
                     myAnimator.SetInteger("Life", life);
                     if (life < 0)
@@ -139,7 +143,6 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Doors"))
         {
-            Debug.Log("oi");
             door = null;
         }
     }
@@ -151,5 +154,10 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(myBoxCol.bounds.center, Vector2.down * 0.5f, Color.red);
 
         return inFloor;
+    }
+
+    private void GameOver()
+    {
+        theGM.Reset();
     }
 }
